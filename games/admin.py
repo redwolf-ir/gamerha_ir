@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import PLATFORM, DEVELOPER, PUBLISHER, GAME, GENRE
 
-# Register your models here.
+admin.site.register(PLATFORM)
+admin.site.register(DEVELOPER)
+admin.site.register(PUBLISHER)
+admin.site.register(GAME)
+admin.site.register(GENRE)
