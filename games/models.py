@@ -1,3 +1,4 @@
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.dispatch import receiver
@@ -64,6 +65,6 @@ class GAME(models.Model):
     ]
     Age_rating = models.CharField(max_length = 45,
     choices = RATINGESRB, default = 'RATINGPENDING')
-    
+
     def __str__(self):
         return '{}'.format(self.title)

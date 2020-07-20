@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^logout/?$', logout_view, name='logout'),
     url(r'^login/?$', login_view, name = 'login'),
     url('account/', include('accounts.urls')),
+    url('games/', include('games.urls')),
     path('admin/', admin.site.urls),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

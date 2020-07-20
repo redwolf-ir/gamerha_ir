@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="" method="post">
+      {% csrf_token %}
+      <input type="text" name="game_name_input">
+      <input type="submit" name="submit">
+    </form>
+    <h2>{{game_name}}</h2>
+    {% for games in game_name %}
+      <a href="?game-slug={{ games.0 }}">{{ games.1 }}</a>
+      <img src="{{ games.2 }}" alt="" style="width: 150px;">
+    {% endfor %}
+
+    {% for pt in platforms %}
+      {{pt}}<br>
+    {% endfor %}
+    <h3>{{released}}</h3>
+    {% for pt in genres %}
+      {{pt}}<br>
+    {% endfor %}
+    <h3>{{esrb_rating}}</h3>
+    {% for pt in developers %}
+      {{pt}}<br>
+    {% endfor %}
+<br>
+    {% for pt in publishers %}
+      {{pt}}<br>
+    {% endfor %}
+  </body>
+</html>
